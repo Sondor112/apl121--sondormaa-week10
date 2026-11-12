@@ -1,0 +1,12 @@
+
+int binary_to_decimal(long long b) {
+    int decimal = 0;
+    int base = 1;
+    while (b > 0) {
+        int last_digit = b % 10;
+        decimal += last_digit * base;
+        base *= 2;
+        b /= 10;
+    }
+    return decimal;
+}
