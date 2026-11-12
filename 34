@@ -1,0 +1,11 @@
+long long decimal_to_binary(int n) {
+    long long binary = 0;
+    long long place = 1;
+    while (n > 0) {
+        int rem = n % 2;
+        binary += rem * place;
+        place *= 10;
+        n /= 2;
+    }
+    return binary;
+}
