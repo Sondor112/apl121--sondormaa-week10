@@ -1,0 +1,38 @@
+int count_digits(int n) {
+    if (n == 0) {
+        return 1;
+    }
+    int count = 0;
+    while (n > 0) {
+        n /= 10;
+        count++;
+    }
+    return count;
+}
+
+int int_pow(int base, int exp) {
+    int result = 1;
+    for (int i = 0; i < exp; i++) {
+        result *= base;
+    }
+    return result;
+}
+
+int is_armstrong(int n) {
+    if (n < 0) {
+        return 0;
+    }
+    int k = count_digits(n);
+    int original = n;
+    int sum = 0;
+    while (n > 0) {
+        int digit = n % 10;
+        sum += int_pow(digit, k);
+        n /= 10;
+    }
+    if (sum == original) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
